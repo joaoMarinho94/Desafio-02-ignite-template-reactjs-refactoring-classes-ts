@@ -3,10 +3,12 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { useField } from "@unform/core";
 
 import { Container } from "./styles";
+import { IconType } from "react-icons";
 
 interface Props {
   name: string;
-  icon?: any;
+  icon?: IconType;
+  placeholder?: string
 }
 
 const Input: React.FC<Props> = ({ name, icon: Icon, ...rest }) => {
