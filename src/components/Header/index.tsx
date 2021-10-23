@@ -7,8 +7,7 @@ interface Props {
   openModal: () => void;
 }
 
-
-export const Header: React.FC<Props> = ({openModal}) => {
+export const Header: React.FC<Props> = ({ openModal }) => {
   return (
     <Container>
       <header>
