@@ -5,13 +5,13 @@ import { Form } from "./styles";
 import { Modal } from "../Modal";
 import Input from "../Input";
 import { FormHandles } from "@unform/core";
-import { ValuesForm } from "../ModalAddFood";
+import { IFoodValuesForm } from "../../pages/Dashboard";
 
 interface Props {
   setIsOpen: () => void;
-  handleUpdateFood: (data: ValuesForm) => void;
+  handleUpdateFood: (data: IFoodValuesForm) => void;
   isOpen: boolean;
-  editingFood: ValuesForm;
+  editingFood: IFoodValuesForm;
 }
 
 export const ModalEditFood: React.FC<Props> = ({
@@ -22,7 +22,7 @@ export const ModalEditFood: React.FC<Props> = ({
 }) => {
   const formRef = createRef<FormHandles>();
 
-  const handleSubmit = async (values: ValuesForm) => {
+  const handleSubmit = async (values: IFoodValuesForm) => {
     handleUpdateFood(values);
     setIsOpen();
   };

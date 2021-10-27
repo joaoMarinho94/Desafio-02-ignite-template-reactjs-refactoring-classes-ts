@@ -5,17 +5,11 @@ import { Form } from "./styles";
 import { Modal } from "../Modal";
 import Input from "../Input";
 import { FormHandles } from "@unform/core";
-
-export interface ValuesForm {
-  image: string;
-  price: string;
-  description: string;
-  name: string;
-}
+import { IFoodValuesForm } from "../../pages/Dashboard";
 
 interface Props {
   setIsOpen: () => void;
-  handleAddFood: (data: ValuesForm) => void;
+  handleAddFood: (data: IFoodValuesForm) => Promise<void>;
   isOpen: boolean;
 }
 
@@ -26,7 +20,7 @@ export const ModalAddFood: React.FC<Props> = ({
 }) => {
   const formRef = createRef<FormHandles>();
 
-  const handleSubmit = async (values: ValuesForm) => {
+  const handleSubmit = async (values: IFoodValuesForm) => {
     handleAddFood(values);
     setIsOpen();
   };
